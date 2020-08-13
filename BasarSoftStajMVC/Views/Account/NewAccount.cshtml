@@ -1,0 +1,58 @@
+﻿@model BasarSoftStajMVC.DataBase.User
+
+@{
+    ViewBag.Title = "Yeni Üyelik";
+}
+
+@section scripts{
+    <style type="text/css">
+        #formKapsayici {
+            box-shadow: 0 0 5px gray;
+            padding: 25px;
+            height: 350px;
+        }
+
+        #divSol, #divSag {
+            float: left;
+            margin-left: 25px;
+        }
+
+            #divSol *, #divSag * {
+                margin-top: 15px;
+            }
+
+        input[type="text"] {
+            width: 250px;
+        }
+
+        #btnUyeOl {
+            clear: both;
+            display: block;
+            margin-left: 132px;
+        }
+    </style>
+
+
+}
+<h2>Yeni Üyelik</h2>
+
+
+@using (Html.BeginForm("NewAccount", "Account", FormMethod.Post, new { enctype = "multipart/form-data", id = "formKapsayici" }))
+{
+    <div id="divSol">
+        @Html.LabelFor(i => Model.Name)<br /><br />
+        @Html.LabelFor(i => Model.EMail)<br /><br />
+        @Html.LabelFor(i => Model.Password)<br /><br />
+    </div>
+
+    <div id="divSag">
+        : @Html.TextBoxFor(i => Model.Name)<br /><br />
+        : @Html.TextBoxFor(i => Model.EMail)<br /><br />
+        : @Html.TextBoxFor(i => Model.Password)<br /><br />
+    </div>
+
+    <input type="submit" value="Üye Ol" id="btnUyeOl" />
+
+
+    @Html.ValidationSummary()
+}
