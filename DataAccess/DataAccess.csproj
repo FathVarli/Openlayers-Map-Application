@@ -61,7 +61,7 @@
     <Compile Include="Concrete\EntityFramework\EfPointDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\IEntityRepository.cs" />
-    <Compile Include="DataBase\SqlContext.cs" />
+    <Compile Include="Context\SqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

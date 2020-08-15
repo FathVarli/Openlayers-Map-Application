@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using Core.Entities.Concrete;
 
-namespace DataAccess.DataBase
+namespace DataAccess.Context
 {
     public class SqlContext : DbContext
     {
@@ -12,5 +12,6 @@ namespace DataAccess.DataBase
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Point> Points { get; set; }
     }
 }

@@ -1,9 +1,10 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
-    <script src="https://unpkg.com/elm-pep"></script>
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+    <script src="https://unpkg.com/jsts@2.0.2/dist/jsts.min.js"></script>
+    <link href="~/Scripts/jspanel-4.11.0-beta/dist/jspanel.css" rel="stylesheet" />
+    <script src="~/Scripts/jspanel-4.11.0-beta/dist/jspanel.js"></script>
     <style>
         .map {
             height: 840px;
@@ -11,24 +12,16 @@
             position: fixed;
             left: 5px;
         }
-    </style> 
+    </style>
 </head>
 
 
 <body>
-    <div id="map" class="map">
+<button type="button" class="btn btn-info" id="btn1"> Point Ekle </button>
+<button type="button" class="btn btn-info" id="btn2"> Polygon Ekle </button>
+<div id="map" class="map">
+</div>
 
-        <div id="mouse-position">
-        </div>
-        <form class="form-inline">
-            <label>Çizilecek şekil: &nbsp;</label>
-            <select id="type">
-                <option value="Point">Point</option>
-                <option value="Polygon">Polygon</option>
-            </select>
-        </form>
-    </div>
-
-    <script src="~/Scripts/init.js"></script>
+<script src="~/Scripts/init.js"></script>
 </body>
 </html>

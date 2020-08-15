@@ -33,6 +33,7 @@ namespace MVCWebUI
             //Services
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<MapManager>().As<IMapService>();
 
 
 

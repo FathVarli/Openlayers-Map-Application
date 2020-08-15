@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAuthService.cs" />
+    <Compile Include="Abstract\IMapService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\AuthManager.cs" />
+    <Compile Include="Concrete\MapManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
