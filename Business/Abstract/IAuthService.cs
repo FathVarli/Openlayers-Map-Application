@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Entities.Concrete;
-using Core.Model;
+using Core.Models;
 
 namespace Business.Abstract
 {
@@ -13,6 +13,6 @@ namespace Business.Abstract
    {
        IDataResult<User> Register(RegisterModel model);
        IDataResult<User> Login(LoginModel model);
-       IResult Update(int id,UserUpdateModel model);
+       IResult Update(string userName,UserUpdateModel model);
    }
 }

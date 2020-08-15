@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E939644-099A-402C-AEB2-F80A05F2BED7}</ProjectGuid>
+    <ProjectGuid>{B5FE6A10-66DD-4CBE-96DC-71D1016FA5CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Business</RootNamespace>
@@ -49,15 +49,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{F6D0EA11-7C85-4108-A6D8-43BA276016FA}</Project>
+      <Project>{6D62C79D-B0B6-4F53-8A6E-106106FCB4CE}</Project>
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{05E68341-C42D-4C89-8EAC-4B4A88C58A8B}</Project>
+      <Project>{3506FDDB-E432-4920-8FB1-100E29DBA840}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>

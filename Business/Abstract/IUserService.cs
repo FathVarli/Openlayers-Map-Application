@@ -10,7 +10,6 @@ namespace Business.Abstract
     public interface IUserService
     {
         User GetByUserName(string userName);
-        User GetByEmail(string email);
         User GetById(int id);
     }
 }

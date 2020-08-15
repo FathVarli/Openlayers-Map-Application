@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Core.Entities.Concrete;
-using Core.Model;
+using Core.Models;
 using Core.Utilities.Results;
 using Core.Utilities.Security;
 using DataAccess.Abstract;
@@ -25,17 +25,16 @@ namespace Business.Concrete
 
         public IDataResult<User> Register(RegisterModel model)
         {
-            //var checkEmail = _userService.GetByEmail(model.EMail);
-            //if (checkEmail != null)
-            //{
-            //    return new ErrorDataResult<User>("Bu mail adresi kullanılıyor!");
-            //}
+            var checkUserName = _userService.GetByUserName(model.UserName);
+            if (checkUserName != null)
+            {
+                return new ErrorDataResult<User>("Bu kullanici adi kullanılıyor!");
+            }
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(model.Password, out passwordHash, out passwordSalt);
             var user = new User
             {
-                Name = model.Name,
-                EMail = model.EMail,
+                UserName = model.UserName,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
             };
@@ -53,29 +52,28 @@ namespace Business.Concrete
 
             if (!HashingHelper.VerifyPasswordHash(model.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<User>("Sifre yanlış");
+                return new ErrorDataResult<User>("Kullanici adi veya sifre hatali!");
             }
 
             return new SuccessDataResult<User>(userToCheck); ;
         }
 
-        public IResult Update(int id, UserUpdateModel model)
+        public IResult Update(string userName, UserUpdateModel model)
         {
-            var user = _userService.GetById(id);
+            var user = _userService.GetByUserName(userName);
             if (user == null)
             {
                 return new ErrorResult("Kullanici bulunamadi");
             }
             else
             {
-                if (!String.IsNullOrEmpty(model.Name))
+                if (!String.IsNullOrEmpty(model.UserName))
                 {
-                    user.Name = model.Name;
+                    user.UserName = model.UserName;
                 }
-
-                if (!String.IsNullOrEmpty(model.Email))
+                if (!String.IsNullOrEmpty(model.NameSurname))
                 {
-                    user.EMail = model.Email;
+                    user.NameSurName = model.NameSurname;
                 }
 
                 if (!String.IsNullOrEmpty(model.Password))

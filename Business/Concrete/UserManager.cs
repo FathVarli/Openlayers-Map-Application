@@ -20,15 +20,10 @@ namespace Business.Concrete
 
         public User GetByUserName(string userName)
         {
-            var user = _userDal.Get(u => u.Name == userName);
+            var user = _userDal.Get(u => u.UserName == userName);
             return user ?? null;
         }
 
-        public User GetByEmail(string email)
-        {
-            var user = _userDal.Get(u => u.EMail == email);
-            return user ?? null;
-        }
 
         public User GetById(int id)
         {
