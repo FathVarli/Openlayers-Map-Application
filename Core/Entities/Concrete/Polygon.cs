@@ -5,21 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Spatial;
 
 namespace Core.Entities.Concrete
 {
-    [Table("dbo.Point")]
-    public class Point:IEntity
+    [Table("dbo.Polygon")]
+    public class Polygon:IEntity
     {
-        [Column("Id")]
+        [Column("id")]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column("KapiNo")]
-        public string KapiNo { get; set; }
-        [Column("x")]
-        public float x { get; set; }
-        [Column("y")]
-        public float y { get; set; }
+        [Column("polygon_name")]
+        public string PolygonName { get; set; }
+        [Column("coordinates")]
+        public DbGeometry Coordinates { get; set; }
+     
     }
 }

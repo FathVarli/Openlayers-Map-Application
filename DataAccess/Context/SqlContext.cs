@@ -13,5 +13,6 @@ namespace DataAccess.Context
 
         public DbSet<User> Users { get; set; }
         public DbSet<Point> Points { get; set; }
+        public DbSet<Polygon> Polygons { get; set; }
     }
 }

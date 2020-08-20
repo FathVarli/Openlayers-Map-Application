@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IPointDal.cs" />
+    <Compile Include="Abstract\IPolygonDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EfEntityRepositoryBase.cs" />
     <Compile Include="Concrete\EntityFramework\EfPointDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfPolygonDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\IEntityRepository.cs" />
     <Compile Include="Context\SqlContext.cs" />

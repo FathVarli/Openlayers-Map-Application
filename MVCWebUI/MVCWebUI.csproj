@@ -370,6 +370,7 @@
     <Content Include="Scripts\jspanel-4.11.0-beta\README.md" />
     <Content Include="Scripts\jspanel-4.11.0-beta\source\extensions\datepicker\theme\default.sass" />
     <Content Include="Scripts\jspanel-4.11.0-beta\source\jspanel.sass" />
+    <Content Include="Views\Map\TestView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

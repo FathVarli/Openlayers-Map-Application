@@ -10,6 +10,7 @@ using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using DataAccess.Context;
 using MVCWebUI;
 
 namespace MVCWebUI
@@ -18,10 +19,10 @@ namespace MVCWebUI
     {
         protected void Application_Start()
         {
-            //using (SqlContext sql = new SqlContext())
-            //{
-            //    sql.Database.CreateIfNotExists();
-            //}
+            using (SqlContext sql = new SqlContext())
+            {
+                sql.Database.CreateIfNotExists();
+            }
 
             var builder = new ContainerBuilder();
 
@@ -30,6 +31,7 @@ namespace MVCWebUI
             //Entityframework
             builder.RegisterType<EfUserDal>().As<IUserDal>();
             builder.RegisterType<EfPointDal>().As<IPointDal>();
+            builder.RegisterType<EfPolygonDal>().As<IPolygonDal>();
             //Services
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<UserManager>().As<IUserService>();

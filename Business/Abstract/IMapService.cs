@@ -11,6 +11,8 @@ namespace Business.Abstract
     public interface IMapService
     {
         IResult AddPoint(float x, float y, string no);
+        IResult AddPolygon(string[][] coordinates, string polygonName);
         IDataResult<List<Point>> GetAllPoint();
+        IDataResult<List<string[][]>> GetAllPolygon();
     }
 }
